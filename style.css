@@ -1,0 +1,25 @@
+html {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart {
+    background-color: #54e877;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 40px;
+    margin-left: 75px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#restart:hover {
+    transform: scale(1.05);
+    background-color: hsl(134, 76%, 65%);
+}
