@@ -1,7 +1,10 @@
+const statusText = document.getElementById('status');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const size = 100;
+
 let currentSymbol = 'X';
+let gameOver = false;
 
 ctx.lineCap = 'round';
 ctx.lineJoin = 'round';
@@ -80,7 +83,7 @@ function drawLine(a, b, c) {
     const y1 = a[0] * size + size / 2;
     const x2 = c[1] * size + size / 2;
     const y2 = c[0] * size + size / 2;
-    ctx.strokeStyle = '#7b2cbf';;
+    ctx.strokeStyle = '#8900f2';;
     ctx.beginPath();
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
@@ -88,27 +91,46 @@ function drawLine(a, b, c) {
 }
 
 function handleClick(event) {
+    if (gameOver) return;
+
     const rect = canvas.getBoundingClientRect();
     const x = Math.floor((event.clientX - rect.left) / size);
     const y = Math.floor((event.clientY - rect.top) / size);
 
-    if (grid[y][x] || checkWin(grid)) return;
+    if (grid[y][x]) return; // Skip if the cell is already occupied
 
     grid[y][x] = currentSymbol;
     drawSymbol(x, y, currentSymbol);
 
+    if (checkWin(grid)) {
+        statusText.innerText = `Player ${currentSymbol} Won!`;
+        statusText.style.color = currentSymbol === 'X' ? '#ff006e' : '#3a86ff';
+        gameOver = true;
+        return;
+    }
+
     if (!checkWin(grid)) {
         currentSymbol = currentSymbol === 'X' ? 'O' : 'X';
+        updateStatusText();
     }
+
+}
+
+function updateStatusText() {
+    statusText.innerText = `${currentSymbol}'s Turn`;
+    statusText.style.color = currentSymbol === 'X' ? '#ff006e' : '#3a86ff';
 }
 
 function reset() {
     grid.forEach(row => row.fill(null));
     drawGrid();
-    currentPlayer = 'X';
+    currentSymbol = 'X';
+    updateStatusText();
+    gameOver = false;
 }
 
 canvas.addEventListener('click', handleClick);
 document.getElementById('restart').addEventListener('click', reset);
 drawGrid();
+updateStatusText();
 

@@ -1,20 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 html {
     height: 100%;
     margin: 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 0;
 }
 
 #restart {
     background-color: #54e877;
+    font-family: Fredoka, Arial;
     font-size: 20px;
     border: 3px solid black;
     border-radius: 5px;
     color: white;
     padding: 10px 40px;
-    margin-left: 75px;
+    margin-left: 77px;
     cursor: pointer;
     transition: transform 0.5s ease;
 }
@@ -23,3 +26,12 @@ html {
     transform: scale(1.05);
     background-color: hsl(134, 76%, 65%);
 }
+
+h1 {
+    color: #ff006e;
+    text-align: center;
+    font-family: Fredoka, Arial;
+    font-size: 3rem;
+    font-weight: 550;
+}
+
