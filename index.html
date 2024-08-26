@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="status"></h1>
-    <canvas id="canvas" height="300" width="300"></canvas>
-    <br><br>
-    <button id="restart">Restart</button>
-    <script src="script.js"></script>
+    <!-- Container -->
+    <div class="container">
+        <h1 id="status"></h1>
+        <canvas id="canvas"></canvas>
+        <!-- Buttons -->
+        <div class="buttons">
+            <button id="restart">Restart</button>
+            <select id="difficulty">
+                <option value="Effortless">Effortless</option>
+                <option value="Easy">Easy</option>
+                <option value="Intermediate">Medium</option>
+                <option value="Hard">Hard</option>
+                <option value="Impossible">Impossible</option>
+            </select>
+        </div>
+        <br>
+        <a href="https://github.com/ElectroBuilder/game" target = "_blank">
+            Source Code
+        </a>
+    </div>
+
+    <script src="draw.js"></script>
+    <script src="main.js"></script>
+    <script src="difficulty.js"></script>
 </body>
 </html>
