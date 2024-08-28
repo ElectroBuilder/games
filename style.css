@@ -68,7 +68,7 @@ h1 {
 }
 
 #restart:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     background-color: hsl(134, 76%, 65%);
 }
 
@@ -77,7 +77,7 @@ h1 {
 }
 
 #difficulty:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     background-color: hsl(274, 100%, 57%);
 }
 
