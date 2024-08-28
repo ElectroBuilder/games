@@ -35,6 +35,7 @@ ctx.lineCap = 'round';
 ctx.lineJoin = 'round';
 
 diff.disabled = true;
+diff.value = diff.value;
 rst.addEventListener('click', reset);
 
 // Main
