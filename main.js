@@ -24,7 +24,6 @@ var isResetting = false;
 
 let aiTurn = false;
 let currentSymbol = 'X';
-let difficulty = diff.value;
 
 // Canvas setup
 canvas.width = 300;
