@@ -1,3 +1,22 @@
+// Save and Load difficulty Level
+document.addEventListener('DOMContentLoaded', () => {
+
+    function saveDifficulty() {
+        const value = diff.value;
+        localStorage.setItem('difficultyFlag', value);
+    }
+
+    function loadDifficulty() {
+        const savedValue = localStorage.getItem('difficultyFlag');
+        if (savedValue)  diff.value = savedValue; 
+        else diff.value = 'Effortless';
+    }
+
+    loadDifficulty();
+
+    diff.addEventListener('change', saveDifficulty);
+});
+
 function handleDifficulty() {
          if (diff.value === 'Effortless') difficulty = 1;
     else if (diff.value === 'Easy') difficulty = 2;
