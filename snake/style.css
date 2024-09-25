@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Fredoka, Arial;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: white;
+}
+
+.wrapper {
+    background: #282828;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.game-details {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-board {
+    width: 500px;
+    height: 500px;
+    background: #222222;
+    border-radius: 6px;
+    display: grid;
+    grid-template: repeat(25, 1fr) / repeat(25, 1fr);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+.controls i {
+    color: white;
+    padding: 25px;
+    width: calc(100% / 4);
+}
+
+.play-board .food {
+    background: #e63946
+}
+
+.play-board .head {
+    background: #4ad66d;
+}
+
+@media (max-width: 525px) {
+    .play-board {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 425px) {
+    .play-board {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 375px) {
+    .play-board {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background: #282828;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    width: 300px; 
+    height: 310px; 
+    text-align: center;
+}
+
+.game-over p {
+    margin: 20px 0 40px 0;
+}
+
+#restart {
+    background: #8338ec;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#restart:hover {
+    background: hsl(265, 83%, 65%);
+}
+
